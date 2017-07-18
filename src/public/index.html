@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Kali Mug</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+</head>
+<body>
+  <div class="p3d-container" id="pan3dapp">
+    <section class="main">
+      <div id="loading">Loading...</div>
+    </section>
+  </div>
+  <div class="settings">
+    Colors (hex: ffffff):
+    <input id="ecolor" placeholder="Outer" type="text" /><br/>
+    <input id="icolor" placeholder="Inner" type="text" /><br/>
+    Use your own texture. Size: 4096x1596. <a href="assets/images/example.png">Download example</a>.
+    <input id="texfile" placeholder="Own texture" type="file" /><br/>
+    Or use url for image:
+    <input id="texurl" placeholder="URL with texture" type="text" /><br/>
+    You can share your mug if you used URL. Just copy the address or click the share button.
+  </div>
+  <div class="help">
+    <p>press left mouse button to rotate</p>
+    <p>press right mouse button to move</p>
+    <p>use mouse wheel to zoom</p>
+  </div>
+  <canvas id="texture"></canvas>
+  <script src="assets/js/app.js"></script>
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:0;top:50%;margin-top:-150px;background-color:transparent;">
+    <a class="addthis_button_preferred_1"></a>
+    <a class="addthis_button_preferred_2"></a>
+    <a class="addthis_button_preferred_3"></a>
+    <a class="addthis_button_preferred_4"></a>
+    <a class="addthis_button_compact"></a>
+  </div>
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5259306229e6ee2a"></script>
+  <!-- AddThis Button END -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-11580645-1', 'kurilo.su');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
