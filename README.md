@@ -2,7 +2,7 @@
 
 https://dkurilo.github.io/kali-mug/build/public/
 
-## Autor
+## Author
 Dima Kurilo (dkurilo@gmail.com)
 
 ## Used
