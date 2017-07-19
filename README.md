@@ -1,5 +1,7 @@
 # Kali Linux mug
 
+https://dkurilo.github.io/kali-mug/build/public/
+
 ## Autor
 Dima Kurilo (dkurilo@gmail.com)
 
