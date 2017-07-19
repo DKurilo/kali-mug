@@ -153,6 +153,11 @@ body {
   .help p {
     font: 22px/28px FreeSerif, serif;
     letter-spacing: 1px; }
+    .help p.small {
+      font: 12px/12px FreeSerif, serif; }
+      .help p.small a {
+        text-decoration: underline;
+        pointer-events: auto; }
 
 #texture {
   display: none; }

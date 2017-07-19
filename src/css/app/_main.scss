@@ -80,6 +80,13 @@ body{
   p{
     font: 22px/28px FreeSerif, serif;
     letter-spacing: 1px;
+    &.small{
+      font: 12px/12px FreeSerif, serif;
+      a{
+        text-decoration: underline;
+        pointer-events: auto;
+      }
+    }
   }
 }
 #texture {
