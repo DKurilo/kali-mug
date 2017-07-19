@@ -1,3 +1,21 @@
+@keyframes toTransparency{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes fromTransparency{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 @font-face {
   font-family: "FreeSerif";
   src: url("../fonts/freeserif.eot");
@@ -43,6 +61,13 @@ body{
     margin: 5px 0 10px;
     padding: 5px 10px;
   }
+  .error{
+    color: rgba(#ff0000, .5);
+    display: none;
+    &.show{
+      display: block;
+    }
+  }
 }
 .help{
   position: fixed;
@@ -59,4 +84,33 @@ body{
 }
 #texture {
   display: none;
+}
+
+@include spinner-balls("white", 50px, 5, #ffffff);
+
+.iloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000000, .4);
+  z-index: 3;
+  opacity: 0;
+  display: none;
+  &.show{
+    display: block;
+    animation: fromTransparency .4s ease 0s both;
+  }
+  &.hide{
+    display: block;
+    animation: toTransparency .4s ease 0s both;
+  }
+  .spinner-wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+  }
+
 }

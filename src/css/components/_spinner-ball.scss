@@ -1,0 +1,49 @@
+@mixin spinner-balls($name: null, $size: 35px, $count: 5, $color: #555) {
+   $class: "";
+   @if $name { $class: ".#{$name}"; };
+
+   @if $size % 2 > 0 { $size: $size+1; };
+
+   $balls: ceil($size / 8);
+   $half: $size/2;
+
+   // Used for $color == rainbow
+   $hrt: floor(360 / $count);
+
+   .spinner.balls#{$class} {
+      position: relative;
+      width: $size;
+      height: $size;
+   }
+
+   .spinner.balls#{$class} > div {
+      position: absolute;
+      width: $balls;
+      height: $balls;
+      top: 0;
+      left: $half;
+      border-radius: $balls;
+      transform-origin: 0 $half;
+      animation-name: balls-spin;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: $count*100+1000ms;
+   }
+
+   @for $i from 1 through $count {
+      .spinner.balls#{$class} > div:nth-of-type(#{$i}) {
+         @if $color == "rainbow" {
+            background-color: adjust-hue(#f0f, $i*$hrt);
+         } @else {
+            background-color: lighten($color, ($i - 1)*5);
+         }
+         animation-delay: $i*100ms;
+      }
+   }
+
+}
+
+@keyframes balls-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

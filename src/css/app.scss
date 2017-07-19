@@ -1,9 +1,11 @@
 // Utils
 @import './utils/normalize';
 
+// Components
+@import './components/loading';
+@import './components/spinner-ball';
+
 // App
 @import './app/base';
 @import './app/main';
 
-// Components
-@import './components/loading';

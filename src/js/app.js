@@ -43,17 +43,21 @@ class P3DAppInit {
     });
 
     $('#texfile').change(e => {
+      this.showLoader();
       const files = document.getElementById("texfile").files;
       const imageType = /^image\//;
-      if (!imageType.test(files[0].type)) {
+      if (!files || !files[0] || !imageType.test(files[0].type)) {
+        $('.settings .error').addClass('show');
+        this.hideLoader();
         return;
       }
       const reader = new FileReader();
-      reader.onload = (e) => { this.loadTexture(e.target.result); };
+      reader.onload = (e) => { this.loadTexture(reader.result); };
       reader.readAsDataURL(files[0]);
     });
 
     $('#texurl').change(e => {
+      this.showLoader();
       this.loadTexture($('#texurl').val());
       this.updateUrl();
     });
@@ -77,8 +81,10 @@ class P3DAppInit {
         this.main.setInternalColor(this.getHex(val));
       }
       if (name === 't') {
-        console.log(decodeURIComponent(val));
-        this.loadTexture(decodeURIComponent(val));
+        const url = decodeURIComponent(val);
+        $('#texurl').val(url);
+        this.showLoader();
+        this.loadTexture(url);
       }
     });
   }
@@ -105,12 +111,24 @@ class P3DAppInit {
 
   loadTexture(tex){
     const texImage = new Image();
+    texImage.onload = () => {
+      this.textureContext.clearRect(0, 0, 4096, 4096);
+      this.textureContext.drawImage(texImage, 0, 0, 4096, 1596);
+      const data = this.texture.toDataURL();
+      try {
+        this.main.updatePhoto(data);
+      } catch(ex) {
+        this.hideLoader();
+        $('.settings .error').addClass('show');
+      }
+      this.hideLoader();
+    };
+    texImage.onerror = () => {
+      this.hideLoader();
+      $('.settings .error').addClass('show');
+    }
     texImage.crossOrigin = 'Anonymous';
     texImage.src = tex;
-    texImage.onload = () => {
-      this.textureContext.drawImage(texImage, 0, 0, 4096, 1596);
-      this.main.updatePhoto(this.texture.toDataURL());
-    };
   }
 
   updateUrl() {
@@ -134,6 +152,18 @@ class P3DAppInit {
       url += 't=' + encodeURIComponent($('#texurl').val());
     }
     this.history.push(url, {});
+  }
+
+  showLoader() {
+    $('.settings .error').removeClass('show');
+    $('.iloader').addClass('show');
+  }
+
+  hideLoader() {
+    $('.iloader').removeClass('show').addClass('hide');
+    setTimeout(() => {
+      $('.iloader').removeClass('hide');
+    }, 410);
   }
 }
 

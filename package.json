@@ -1,8 +1,8 @@
 {
-  "name": "threejs-es6-webpack-boilerplate",
+  "name": "kali-mug-modeling",
   "version": "1.0.0",
-  "description": "Boilerplate for Three.js projects set up with Babel for ES6 and compiled with webpack",
-  "author": "Paul Graffam",
+  "description": "Small web app to make ideal mug for yourself",
+  "author": "Dima Kurilo",
   "main": "app.js",
   "scripts": {
     "dev": "run-p dev:sass webpack-server webpack-watch",
