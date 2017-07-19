@@ -16,7 +16,7 @@ and other...
 Paul Graffam, thank you for threejs-es6-webpack-boilerplate.
 
 ## Start working
-git clone
+git clone  
 npm install
 
 ## Development
