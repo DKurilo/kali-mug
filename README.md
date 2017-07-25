@@ -37,3 +37,9 @@ npm run build
 Deployment package will be in /build/
 
 ### Enjoy!
+
+###P.S.
+This is the real mug that was making by some random company:  
+![alt Real Kali Mug](https://dkurilo.github.io/kali-mug/photo/20170724_200031.jpg)  
+So to acheive the best result it's better to change the model: sizes and print area.  
+But it's still precise enough.  
