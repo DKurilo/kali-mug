@@ -8,7 +8,7 @@ So I truly love this Linux distributive. Also it contains gcc by default.
 
 But now everybody can model a mug he/she wants to have.  
 
-This project are made for standard 11lb mug size (about 90mm height and 80mm diameter) and for dye-sublimation paper like TexPrint-R Mug-Size 3.5" x 9.125" (http://www.beaverpaper.com/dye-sublimation_desktop-papers_TexPrint-R-Mug-Size.html)  
+This project are made for standard 11oz mug size (about 90mm height and 80mm diameter) and for dye-sublimation paper like TexPrint-R Mug-Size 3.5" x 9.125" (http://www.beaverpaper.com/dye-sublimation_desktop-papers_TexPrint-R-Mug-Size.html)  
 This is how it works: https://www.youtube.com/watch?v=91ZfzzBdWyA  
 
 ## Author
