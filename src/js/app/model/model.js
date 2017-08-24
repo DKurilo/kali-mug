@@ -51,6 +51,8 @@ export default class Model {
       if(child instanceof THREE.Mesh) {
         child.opacity = 1.0;
 
+        child.geometry.computeVertexNormals();
+
         const material = new Material(this.getMeshColor(child.name), this.textures[child.name]);
         child.material = material.standard;
         child.myMaterial = material;

@@ -84,7 +84,7 @@ export default {
     z: 20
   },
   shadow: {
-    enabled: true,
+    enabled: false,
     helperEnabled: false,
     cameraRight: 1000,
     cameraLeft: -1000,

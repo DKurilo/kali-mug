@@ -114,6 +114,8 @@ void main() {
       side: THREE.DoubleSide,
       blending: THREE.NormalBlending,
       transparent: true,
+      polygonOffset: true,
+      polygonOffsetFactor: .001,
     });
     if (texture) {
       this.standard.map = texture;
